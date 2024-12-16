@@ -1,0 +1,364 @@
+/* รีเซ็ตสไตล์พื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out; /* ลูกเล่น fade-in เมื่อโหลดหน้า */
+}
+
+
+/* รีเซ็ตสไตล์พื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out; /* ลูกเล่น fade-in เมื่อโหลดหน้า */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    background: url('https://giffiles.alphacoders.com/221/221024.gif') no-repeat center center/cover; /* ใส่ลิงก์รูปภาพ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* เอฟเฟกต์ Hover */
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(51, 6, 252, 0.3);
+}
+
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid #570303;
+}
+
+.info h1, h2 {
+    margin: 10px 0;
+    color: #ffffff; /* สีด้านในของตัวหนังสือ */
+    font-weight: 900; /* ความหนาสุด */
+    text-shadow: 
+        -2px -2px 0 #a51616, 
+         2px -2px 0 #a51616, 
+        -2px  2px 0 #a51616, 
+         2px  2px 0 #a51616, 
+        -3px -3px 0 #a51616, 
+         3px -3px 0 #a51616, 
+        -3px  3px 0 #a51616, 
+         3px  3px 0 #a51616;
+}
+
+
+
+.next-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #092b04;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #41eb5d;
+}
+/* สไตล์ของป๊อปอัพ */
+#nextPersonPopup {
+    display: none; /* ซ่อนป๊อปอัพโดยเริ่มต้น */
+    position: fixed; /* ใช้ fixed position */
+    top: 50%; /* กำหนดตำแหน่งจากขอบบนของหน้าจอ */
+    left: 50%; /* กำหนดตำแหน่งจากขอบซ้ายของหน้าจอ */
+    transform: translate(-50%, -50%); /* ปรับตำแหน่งให้อยู่กลางหน้าจอ */
+    background-color: rgb(255, 255, 255); /* สีพื้นหลังของป๊อปอัพ */
+    border-radius: 10px; /* ขอบมน */
+    box-shadow: 0 4px 8px rgb(255, 255, 255); /* เงา */
+    padding: 20px; /* ระยะห่างจากขอบ */
+    z-index: 1000; /* ให้อยู่บนสุด */
+}
+
+/* พื้นหลังมืดที่คลุมเมื่อป๊อปอัพแสดง */
+#popupOverlay {
+    display: none; /* ซ่อนพื้นหลังมืด */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังมืด */
+    z-index: 999; /* อยู่ใต้ป๊อปอัพ */
+}
+
+/* ปรับสไตล์ป๊อปอัพ */
+.popup {
+    display: none; /* ซ่อนป๊อปอัพตามปกติ */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* เริ่มด้วยขนาดเล็ก */
+    background-color: rgb(27, 2, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 80%; /* ปรับขนาดป๊อปอัพ */
+    max-width: 500px; /* กำหนดขนาดสูงสุด */
+    opacity: 0; /* เริ่มต้นโปร่งใส */
+    animation: popupFadeIn 0.6s ease-out forwards; /* เพิ่มอนิเมชัน */
+}
+
+/* เอฟเฟกต์เปิดป๊อปอัพ */
+@keyframes popupFadeIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ตัวกรอบแสงและรูปพื้นหลัง */
+.custom-box {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background: url('https://giffiles.alphacoders.com/220/220764.gif') no-repeat center center/cover; /* ใส่ลิงก์รูปภาพที่นี่ */
+    z-index: 1;
+    overflow: hidden; /* ป้องกันไม่ให้รูปภาพเกินกรอบ */
+    height: 300px; /* กำหนดความสูงของกล่องเพื่อให้เห็นภาพ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับกล่อง */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเคลื่อนไหวเมื่อ hover */
+}
+
+/* การสร้างแสงเรืองรอง */
+.custom-box::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 10px;
+    background: url('') center center/cover; /* รูปพื้นหลัง */
+    z-index: -1;
+    opacity: 0.9;
+    box-shadow: 0 0 10px 5px rgba(5, 214, 50, 0.6); /* เพิ่มแสงเรืองรอง */
+    animation: glowing 2s infinite alternate;
+}
+
+/* เอฟเฟกต์แสงเรืองรอง */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(13, 209, 88, 0.6); /* แสงนุ่มนวล */
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(8, 205, 219, 0.9); /* แสงที่ชัดขึ้น */
+    }
+}
+
+/* เอฟเฟกต์ Hover */
+.custom-box:hover {
+    transform: scale(1.05); /* เพิ่มขนาดเมื่อ hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
+}
+
+
+
+/* สไตล์สำหรับเนื้อหาของข้อมูลคนถัดไป */
+.next-person-info h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.next-person-info img {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #10ad10;
+}
+
+.next-person-info h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+
+/* ตกแต่ง Footer ให้อยู่ด้านล่าง */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* ใช้สีพื้นหลังโปร่งใส */
+    background-image: url('stop'); /* ใส่ลิงก์ภาพพื้นหลัง */
+    background-size: cover; /* ขยายภาพให้เต็มกรอบ */
+    background-position: center; /* จัดตำแหน่งภาพให้ตรงกลาง */
+    background-repeat: no-repeat; /* ห้ามให้ภาพซ้ำ */
+    padding: 10px 0;
+    position: fixed; /* ให้ footer ติดอยู่ล่างสุดตลอด */
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* ตกแต่งไอคอนรูปภาพ */
+.footer-icon {
+    max-width: 100px; /* กำหนดขนาดใหญ่สุด */
+    height: auto; /* ปรับความสูงอัตโนมัติตามอัตราส่วน */
+    margin: 0 15px; /* ระยะห่างระหว่างไอคอน */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+/* เอฟเฟกต์เมื่อชี้เมาส์ */
+.footer-icon:hover {
+    transform: scale(1.3) rotate(10deg); /* ขยายและหมุนเล็กน้อย */
+    box-shadow: 0 10px 20px rgba(243, 240, 240, 0.2); /* เพิ่มเงาให้ดูมีมิติ */
+    cursor: pointer; /* เปลี่ยนเป็นรูปมือ */
+}
+
+
+body {
+    background-image: url('https://img2.pic.in.th/pic/tumblr_0a5707cca5bbfc9f4b0bad5062e69cf3_781f6a3b_640.gif'); /* เปลี่ยนเป็น path ของรูปคุณ */
+    background-size: cover; /* ปรับให้รูปเต็มจอ */
+    background-position: center; /* จัดรูปให้อยู่ตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    font-family: 'Arial', sans-serif; /* ฟอนต์ */
+}
+
+.profile-card {
+    background-image: url('https://cdn.wallpaper.tn/large/Gif-Wallpaper-Anime-94153.jpg'); /* เส้นทางรูปภาพ */
+    background-size: cover; /* ปรับรูปภาพให้เต็มพื้นที่ */
+    background-position: center; /* จัดตำแหน่งรูปตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    color: rgb(50, 34, 139); /* สีฟอนต์ให้ชัดเจน */
+    padding: 20px; /* ระยะห่างด้านใน */
+    border-radius: 10px; /* มุมโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}    
+
+/* สไตล์ของปุ่ม */
+/* สไตล์ของปุ่ม */
+.link-button {
+    position: fixed;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff00;
+    color: rgb(137, 206, 233);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+/* ปุ่มที่ 1 และ 2 จะมีเอฟเฟ็กต์การหมุนแสง */
+.link-button:nth-of-type(1)::after,
+.link-button:nth-of-type(2)::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    border-radius: 5px;
+    background-image: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+    );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    -webkit-mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue linear 500ms infinite;
+    animation-play-state: paused;
+}
+
+/* เริ่มการหมุนแสงเมื่อ hover */
+.link-button:nth-of-type(1):hover::after,
+.link-button:nth-of-type(2):hover::after {
+    animation-play-state: running;
+}
+
+@keyframes rotate-hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
+/* เพิ่มการเปลี่ยนขนาดและสีเมื่อ hover */
+.link-button:nth-of-type(1):hover,
+.link-button:nth-of-type(2):hover {
+    background-color: #0057b300;
+    transform: scale(1.1);
+}
+
+/* ปรับตำแหน่งปุ่มแรก */
+.link-button:nth-of-type(1) {
+    top: 48%; /* ปรับตำแหน่งให้สูงขึ้นเล็กน้อย */
+}
+
+/* ปรับตำแหน่งปุ่มที่สอง */
+.link-button:nth-of-type(2) {
+    top: calc(50% + 60px); /* ปรับให้ปุ่มที่สองอยู่ใต้ปุ่มแรก */
+}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAO x SARUN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://img2.pic.in.th/pic/d3e97d8e-ed20-470d-acee-6db2cb0777e1-removebg-preview.png" alt="โลโก้ของคุณ" class="logo">
+        <button id="goToAboutButton" class="go-to-about-btn">ไปที่หน้าประวัติ</button>
+    </div>
+
+    <!-- เพิ่ม JavaScript ภายใน HTML -->
+    <script>
+        // เมื่อหน้าเว็บโหลดเสร็จ
+        document.addEventListener("DOMContentLoaded", function() {
+            // หาปุ่มที่มี id "goToAboutButton"
+            const goToAboutButton = document.getElementById("goToAboutButton");
+
+            // เมื่อคลิกปุ่ม ไปยังหน้า about.html
+            goToAboutButton.addEventListener("click", function() {
+                window.location.href = "about.html"; // เปลี่ยนไปหน้า about.html
+            });
+        });
+    </script>
+</body>
+</html>

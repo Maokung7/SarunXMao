@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAO x SARUN</title>
+    <link rel="stylesheet" href="about-styles.css">
+  <style>
+    
+        /* customizable snowflake styling */
+        .snowflake {
+          color: #fff;
+          font-size: 1em;
+          font-family: Arial, sans-serif;
+          text-shadow: 0 0 5px #000;
+        }
+        
+        .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}
+        @keyframes snowflakes-fall{
+          0%{transform:translateY(0)}
+          100%{transform:translateY(110vh)}
+        }
+        @keyframes snowflakes-shake{
+          0%,100%{transform:translateX(0)}
+          50%{transform:translateX(80px)}
+        }
+        .snowflake{
+          position:fixed;
+          top:-10%;
+          z-index:9999;
+          -webkit-user-select:none;
+          user-select:none;
+          cursor:default;
+          animation-name:snowflakes-shake;
+          animation-duration:3s;
+          animation-timing-function:ease-in-out
+        }
+        .snowflake .inner{
+          animation-duration:10s;
+          animation-name:snowflakes-fall;
+          animation-timing-function:linear
+        }
+        .snowflake:nth-of-type(0){left:1%;animation-delay:0s}
+        .snowflake:nth-of-type(0) .inner{animation-delay:0s}
+        .snowflake:first-of-type{left:10%;animation-delay:1s}
+        .snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}
+        .snowflake:nth-of-type(2){left:20%;animation-delay:.5s}
+        .snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}
+        .snowflake:nth-of-type(3){left:30%;animation-delay:2s}
+        .snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}
+        .snowflake:nth-of-type(4){left:40%;animation-delay:2s}
+        .snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}
+        .snowflake:nth-of-type(5){left:50%;animation-delay:3s}
+        .snowflake:nth-of-type(5) .inner{animation-delay:8s}
+        .snowflake:nth-of-type(6){left:60%;animation-delay:2s}
+        .snowflake:nth-of-type(7){left:70%;animation-delay:1s}
+        .snowflake:nth-of-type(7) .inner{animation-delay:2.5s}
+        .snowflake:nth-of-type(8){left:80%;animation-delay:0s}
+        .snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}
+        .snowflake:nth-of-type(9) .inner{animation-delay:3s}
+        .snowflake:nth-of-type(10){left:25%;animation-delay:0s}
+        .snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://img2.pic.in.th/pic/64cfbcdc-87a2-4f0f-9138-1d40df2d5751.jpg" alt="รูปตัวเอง" class="profile-img">
+            <div class="info">
+                <h1>ชื่อ: นายรัฐภูมิ จอมทอง</h1>
+                <h2>ชั้น: ปวส.1/7 </h2>
+                <h2>เลขที่: 6</h2>
+                <h2>สาขา: คอมพิวเตอร์ธุรกิจดิจิทัล</h2>
+                <button id="nextPersonButton" class="next-button">Click Me </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ปุ่มแยกที่อยู่ข้างหน้าจอ -->
+    <a href="https://maoshop.rexzy.xyz/" target="_blank" class="link-button">Mao Shop</a>
+    <a href="https://youtu.be/dQw4w9WgXcQ?si=_Zdja8QbyZL_tEfh" target="_blank" class="link-button">กดสิครับจะพาไปดูของดี</a>
+
+    <!-- พื้นหลังมืดที่ใช้สำหรับป๊อปอัพ -->
+    <div id="popupOverlay" class="popup-overlay"></div>
+
+    <!-- ป๊อปอัพสำหรับแสดงข้อมูลคนถัดไป -->
+    <div id="nextPersonPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopupButton" class="close-btn">&times;</span>
+            <div class="next-person-info">
+                <img src="https://img2.pic.in.th/pic/465962453_1115072220331672_5936888311461667261_n.jpg" alt="รูปคนถัดไป" class="profile-img">
+                <h2>ชื่อ: นายอัครินทร์ มาลาอุตม์</h2>
+                <h2>ชั้น: ปวส.1/7 </h2>
+                <h2>เลขที่: 17</h2>
+                <h2>สาขา: คอมพิวเตอร์ธุรกิจดิจิทัล</h2>
+            </div>
+        </div>
+    </div>
+
+   <footer>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon"> 
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="เว็ปกูอย่าหลอน" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="เหงาเนอะ" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="ปัญญาอ่อน" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="ปัญญาอ่อน" class="footer-icon">
+        </a>
+        <a href="https://maoshop.rexzy.xyz/home" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อ่านทำควยอะไร" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="ก็อปไม" class="footer-icon">
+        </a>
+        <a href="https://www.canva.com/design/DAGZYFr9lhI/wbs1PzHi2eaNkjf00TetAg/edit?utm_content=DAGZYFr9lhI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <img src="https://i.imgur.com/j2Emvnx.png" alt="อย่าก็อปดิไอ้โง่" class="footer-icon">
+        </a>
+    </footer>
+
+    <script>
+
+        // ฟังก์ชันสำหรับเปิดป๊อปอัพเมื่อคลิกปุ่ม "ดูข้อมูลคนถัดไป"
+        document.getElementById("nextPersonButton").addEventListener("click", function() {
+            document.getElementById("nextPersonPopup").style.display = "block"; // เปิดป๊อปอัพ
+            document.getElementById("popupOverlay").style.display = "block"; // แสดงพื้นหลังมืด
+        });
+
+
+        // ฟังก์ชันปิดป๊อปอัพเมื่อคลิกพื้นที่ด้านนอกของป๊อปอัพ
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("popupOverlay")) {
+                document.getElementById("nextPersonPopup").style.display = "none"; // ปิดป๊อปอัพ
+                document.getElementById("popupOverlay").style.display = "none"; // ซ่อนพื้นหลังมืด
+            }
+        });
+    </script>
+        
+</body>
+</html>
+

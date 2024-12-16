@@ -1,0 +1,67 @@
+/* รีเซ็ตสไตล์พื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c1c1c; /* สีพื้นหลังเข้ม */
+    flex-direction: column; /* แนวตั้ง */
+    overflow: hidden; /* ไม่ให้มีการเลื่อนหน้า */
+    animation: fadeIn 1s ease-out; /* ลูกเล่น Fade-in สำหรับทั้งหน้า */
+}
+
+/* คอนเทนเนอร์ที่ห่อหุ้มโลโก้และปุ่ม */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: slideUp 1s ease-out; /* ลูกเล่น Slide-in สำหรับคอนเทนเนอร์ */
+}
+
+/* สไตล์โลโก้ */
+.logo {
+    width: 700px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มลูกเล่นขยายและเงา */
+}
+
+/* โลโก้ขยายเมื่อเอาเมาส์ไปชี้ */
+.logo:hover {
+    transform: scale(1.1);  /* ขยายโลโก้ */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5); /* เพิ่มเงาเมื่อเมาส์ชี้ */
+}
+
+/* ปุ่ม */
+.go-to-about-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50px; /* ให้ปุ่มมีขอบมน */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มลูกเล่นการขยาย */
+}
+
+/* เปลี่ยนสีปุ่มเมื่อเมาส์ชี้ */
+.go-to-about-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px) scale(1.1); /* เด้งขึ้นและขยายเมื่อเมาส์ชี้ */
+}
+
+/* ลูกเล่นขยายโลโก้ */
+.logo:hover {
+    transform: scale(1.1);  /* ขยายโลโก้ */
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5); /* เพิ่มเงาเมื่อเมาส์ชี้ */
+}
